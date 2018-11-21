@@ -1,6 +1,7 @@
 # 
 ```C++ runnable
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -42,8 +43,11 @@ int selectk(int a[], int low, int high, int k)
     int a[] = {5, 15, 5, 7, 9, 17,100, 3, 12, 10, 19, 18, 16, 10, 1000,1,1,1,1,1,1,1,1};
     int r = selectk(a, 0, sizeof(a) /sizeof(int) - 1, 5);
     cout<<(r == -1 ? r : a[r])<<endl;
+    sort(a,a+(sizeof(a)/sizeof(int) - 1), [](int a, int b) { return b < a ;});
+    cout << a[4] << endl;
     return 0;
 }
+
 
     
      
